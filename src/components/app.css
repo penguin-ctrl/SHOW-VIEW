@@ -1,0 +1,359 @@
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.nav-link-custom {
+  color: #080808ff;
+  font-weight: 700;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+/* ===== SITE THEME ===== */
+
+:root {
+  --bg-dark: #0c0d0e;
+  --bg-card: rgba(255, 255, 255, 0.08);
+  --glass-1: rgba(255, 255, 255, 0.05);
+  --glass-2: rgba(255, 255, 255, 0.12);
+  --glass-stroke: rgba(255, 255, 255, 0.25);
+  --text-light: #ffffff;
+  --text-dim: #cccccc;
+  --accent: #222425;
+  /* --bg-image: url('../images.jpg/Front.jpg'); <- set your background image path */
+  --radius: 18px;
+  --shadow: 0 8px 40px rgba(0,0,0,0.35);
+
+  font-family: "Inter", sans-serif;
+}
+
+/* Apply background image to the body */
+body {
+  background: var(--bg-dark) var(--bg-image) no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Background wrapper */
+.page-wrap {
+  background: var(--bg-dark);
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+/* Floating glass squares */
+.floating {
+  position: absolute;
+  backdrop-filter: blur(25px);
+  background: var(--glass-1);
+  border: 1px solid var(--glass-stroke);
+  border-radius: 22px;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px);}
+  100% { transform: translateY(0);}
+}
+
+/* Glass Cards */
+.glass-card {
+  background: var(--glass-2);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius);
+  padding: 35px 30px;
+  border: 1px solid var(--glass-stroke);
+  box-shadow: var(--shadow);
+}
+
+/* Input styling */
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.18);
+  border: 1px solid rgba(255,255,255,0.35);
+  color: var(--text-light);
+  font-size: 15px;
+  outline: none;
+}
+
+.btn-primary {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Full page layout */
+.login-page {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #000000, #111111, #1a1a1a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+}
+
+/* Floating neon panels */
+.floating-panel {
+  position: absolute;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.panel1 {
+  width: 160px;
+  height: 160px;
+  top: 10%;
+  left: 15%;
+  animation: float1 6s ease-in-out infinite;
+}
+
+.panel2 {
+  width: 200px;
+  height: 200px;
+  bottom: 10%;
+  right: 15%;
+  animation: float2 7s ease-in-out infinite;
+}
+
+/* Glass form */
+.glass-form {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 40px rgba(0, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+/* Form heading */
+.glass-form h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #00ffff;
+  text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
+}
+
+/* Inputs */
+.glass-form input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.glass-form input::placeholder {
+  color: #a0ffff;
+}
+
+.glass-form input:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 12px #00ffff;
+}
+
+/* Button */
+.glass-form button {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(0, 255, 255, 0.6);
+  color: #000;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.glass-form button:hover {
+  background: rgba(0, 255, 255, 0.85);
+}
+
+.glass-form button:disabled {
+  background: rgba(128,128,128,0.6);
+  cursor: not-allowed;
+}
+
+/* Error text */
+.error-text {
+  color: #ff4c4c;
+  font-size: 14px;
+}
+
+/* Animations */
+@keyframes float1 {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes float2 {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(25px) translateX(-15px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+/* Dashboard background */
+.dashboard-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0a0a0a, #111111, #0a0a0a);
+  overflow: hidden;
+  font-family: "Arial", sans-serif;
+}
+
+/* Floating neon panels */
+.floating-panel {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.dash-panel1 {
+  width: 180px;
+  height: 180px;
+  top: 10%;
+  left: 15%;
+}
+
+.dash-panel2 {
+  width: 220px;
+  height: 220px;
+  bottom: 10%;
+  right: 15%;
+  animation-duration: 7s;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(15px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* Glassmorphic card */
+.dashboard-card {
+  position: relative;
+  z-index: 5;
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 25px;
+  padding: 30px 25px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.2);
+  color: #e0e0e0;
+  text-align: center;
+}
+
+/* Heading */
+.dashboard-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #00ffff;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+/* Logout button */
+.logout-btn {
+  padding: 10px 25px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #000;
+  background: rgba(0, 255, 255, 0.7);
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.logout-btn:hover {
+  background: rgba(0, 255, 255, 0.9);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+}
+
+/* Booking list */
+.booking-list {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.booking-list li {
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  backdrop-filter: blur(15px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.booking-list li:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.booking-name {
+  font-weight: 600;
+  color: #00ffff;
+}
+
+.booking-room {
+  font-weight: 500;
+  color: #e0e0e0;
+}
